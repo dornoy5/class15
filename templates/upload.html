@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Photo</title>
+</head>
+<body>
+    <h1>Upload a Photo</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="photo" accept=".jpg, .jpeg, .png, .gif" required><br><br>
+        <input type="submit" value="Upload">
+    </form>
+
+    <!-- Display uploaded photo -->
+    {% if uploaded_filename %}
+    <h2>Uploaded Photo:</h2>
+    <img src="{{ url_for('uploaded_file', filename=uploaded_filename) }}" alt="Uploaded Photo">
+    {% endif %}
+</body>
+</html>
